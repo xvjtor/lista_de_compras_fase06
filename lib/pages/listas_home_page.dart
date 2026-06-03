@@ -1,5 +1,7 @@
 import 'package:app_lista_de_compras/model/lista_model.dart';
 import 'package:app_lista_de_compras/pages/criar_lista_page.dart';
+import 'package:app_lista_de_compras/pages/user_preference_page.dart';
+import 'package:app_lista_de_compras/themes/app_colors.dart';
 import 'package:app_lista_de_compras/widgets/lista_home_widget.dart';
 import 'package:app_lista_de_compras/widgets/lista_vazia_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,21 +20,27 @@ class _ListasHomepageState extends State<ListasHomepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 5,
-        shadowColor: Colors.black54,
-        actionsPadding: .symmetric(horizontal: 10),
-        centerTitle: true,
         title: Text(
           key: Key("appBarTitle"),
           "Minhas listas",
           style: TextStyle(color: Colors.white, fontWeight: .w500),
         ),
-        backgroundColor: Colors.green,
-        actions: [Icon(Icons.diamond, color: Colors.amber, size: 30)],
+
+        actions: [
+          Icon(Icons.diamond, color: Colors.amber, size: 30),
+          IconButton(
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => UserPreference()));
+            },
+            icon: const Icon(Icons.settings, color: Colors.white, size: 30),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         key: Key("addListBtn"),
-        backgroundColor: Colors.blue,
+
         onPressed: () async {
           final novaLista = await Navigator.push<Lista>(
             context,

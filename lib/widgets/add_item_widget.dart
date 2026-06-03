@@ -30,9 +30,9 @@ class _AddItemWidgetState extends State<AddItemWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 20,
-        right: 20,
-        top: 40,
+        left: 15,
+        right: 15,
+        top: 10,
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       child: Form(
@@ -45,11 +45,7 @@ class _AddItemWidgetState extends State<AddItemWidget> {
               children: [
                 Text(
                   "Adicionar item",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: .bold,
-                    color: Colors.black,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 IconButton(
                   onPressed: () {
@@ -59,21 +55,23 @@ class _AddItemWidgetState extends State<AddItemWidget> {
                 ),
               ],
             ),
-            Divider(color: Colors.grey, thickness: 2),
-            SizedBox(height: 15),
+            Divider(),
+
             TextfieldWidget(
+              color: const Color(0xFF121212),
               key: Key("inputItem"),
               text: "Nome do item",
               controller: nomeItemController,
             ),
-            SizedBox(height: 10),
+
             TextfieldWidget(
               key: Key("inputValue"),
+              color: const Color(0xFF121212),
               text: "R\$ 0,00",
               controller: valorItemController,
               teclado: .numberWithOptions(decimal: true),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 5),
             Row(
               children: [
                 Spacer(),
@@ -83,11 +81,12 @@ class _AddItemWidgetState extends State<AddItemWidget> {
                   },
                   child: Text(
                     "Adicionar",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.green),
                   ),
                 ),
               ],
             ),
+            SizedBox(height: 50),
           ],
         ),
       ),

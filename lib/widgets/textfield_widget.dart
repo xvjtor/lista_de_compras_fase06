@@ -4,12 +4,14 @@ class TextfieldWidget extends StatelessWidget {
   final String text;
   final TextEditingController? controller;
   final TextInputType? teclado;
+  final Color? color;
 
   const TextfieldWidget({
     super.key,
     required this.text,
     this.controller,
     this.teclado,
+    this.color,
   });
 
   @override
@@ -19,13 +21,10 @@ class TextfieldWidget extends StatelessWidget {
       child: TextFormField(
         key: key,
         keyboardType: teclado,
+
         controller: controller,
-        decoration: InputDecoration(
-          label: Text(text, style: TextStyle(color: Colors.grey[600])),
-          filled: true,
-          fillColor: Colors.white,
-          border: InputBorder.none,
-        ),
+
+        decoration: InputDecoration(label: Text(text)),
         validator: (value) {
           if (value == null || value.isEmpty) {
             return "Campo obrigatório";

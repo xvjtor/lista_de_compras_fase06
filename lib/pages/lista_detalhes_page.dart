@@ -1,5 +1,6 @@
 import 'package:app_lista_de_compras/model/item_model.dart';
 import 'package:app_lista_de_compras/model/lista_model.dart';
+
 import 'package:app_lista_de_compras/widgets/add_item_widget.dart';
 import 'package:app_lista_de_compras/widgets/lista_itens_widget.dart';
 
@@ -19,8 +20,9 @@ class ListaDetalhesPage extends StatefulWidget {
 class _ListaDetalhesState extends State<ListaDetalhesPage> {
   void addItem() async {
     final novoItem = await showModalBottomSheet<Item>(
+      
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+
       context: context,
       builder: (ctx) {
         return AddItemWidget();
@@ -38,11 +40,8 @@ class _ListaDetalhesState extends State<ListaDetalhesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        elevation: 5,
-        shadowColor: Colors.black54,
         actionsPadding: .symmetric(horizontal: 10),
-        backgroundColor: Colors.green,
+
         actions: [
           TextButton(
             key: Key("updateListBtn"),
@@ -107,7 +106,7 @@ class _ListaDetalhesState extends State<ListaDetalhesPage> {
           "Adicionar",
           style: TextStyle(color: Colors.white, fontSize: 15, letterSpacing: 1),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         shape: RoundedRectangleBorder(borderRadius: .circular(30)),
       ),
     );

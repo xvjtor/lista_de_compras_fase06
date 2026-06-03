@@ -1,5 +1,6 @@
 import 'package:app_lista_de_compras/model/lista_model.dart';
 import 'package:app_lista_de_compras/pages/lista_detalhes_page.dart';
+
 import 'package:flutter/material.dart';
 
 class ListaHomeWidget extends StatefulWidget {
@@ -22,16 +23,17 @@ class _ListaHomeWidgetState extends State<ListaHomeWidget> {
           padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Card(
             key: Key("shoppingListCard"),
-            margin: .symmetric(horizontal: 1),
-            shape: RoundedRectangleBorder(borderRadius: .circular(5)),
-            color: Colors.white,
+
             child: ListTile(
               title: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(lista.nomeLista),
+                    Text(
+                      lista.nomeLista,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
 
                     Text(
                       "${lista.totalMarcados}/${lista.totalItens}",
@@ -42,13 +44,14 @@ class _ListaHomeWidgetState extends State<ListaHomeWidget> {
               ),
 
               subtitle: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                padding: const EdgeInsets.only(top: 20, bottom: 15),
                 child: Column(
                   children: [
                     LinearProgressIndicator(
+                      minHeight: 6,
+
                       color: Colors.green,
                       value: lista.progresso,
-                      backgroundColor: Colors.grey[500],
                     ),
                   ],
                 ),
@@ -61,7 +64,6 @@ class _ListaHomeWidgetState extends State<ListaHomeWidget> {
                 );
                 setState(() {});
               },
-              shape: RoundedRectangleBorder(borderRadius: .circular(5)),
             ),
           ),
         );

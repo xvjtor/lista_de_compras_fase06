@@ -28,10 +28,10 @@ class _ResumoListaWidgetState extends State<ResumoListaWidget> {
               Column(
                 crossAxisAlignment: .start,
                 children: [
-                  const Text("Não marcados", style: TextStyle(fontSize: 15)),
+                  const Text("Não marcados", style: TextStyle(fontSize: 18)),
                   Text(
                     "R\$ ${widget.totalNaoMarcado.toStringAsFixed(2)}",
-                    style: const TextStyle(color: Colors.blue, fontSize: 15),
+                    style: const TextStyle(color: Colors.blue, fontSize: 18),
                   ),
                 ],
               ),
@@ -39,10 +39,10 @@ class _ResumoListaWidgetState extends State<ResumoListaWidget> {
               Column(
                 crossAxisAlignment: .start,
                 children: [
-                  Text("Marcados", style: TextStyle(fontSize: 15)),
+                  Text("Marcados", style: TextStyle(fontSize: 18)),
                   Text(
                     "R\$ ${widget.totalMarcado.toStringAsFixed(2)}",
-                    style: const TextStyle(color: Colors.green, fontSize: 15),
+                    style: const TextStyle(color: Colors.green, fontSize: 18),
                   ),
                 ],
               ),

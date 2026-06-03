@@ -1,5 +1,6 @@
 import 'package:app_lista_de_compras/model/lista_model.dart';
-import 'package:app_lista_de_compras/widgets/textfield_widget.dart';
+import 'package:app_lista_de_compras/themes/app_colors.dart';
+
 import 'package:flutter/material.dart';
 
 class CriarListaPage extends StatefulWidget {
@@ -20,8 +21,9 @@ class _CriarListaPageState extends State<CriarListaPage> {
   final nomeListaController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppColors>();
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: appColors!.primaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
         child: Column(
@@ -31,10 +33,26 @@ class _CriarListaPageState extends State<CriarListaPage> {
               flex: 10,
               child: Align(
                 alignment: .center,
-                child: TextfieldWidget(
+                child: TextFormField(
                   key: Key("listNameInput"),
-                  text: "Nome da lista",
+
                   controller: nomeListaController,
+                  style: Theme.of(context).textTheme.labelSmall,
+
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    label: Text(
+                      "Nome da lista",
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Campo obrigatório";
+                    }
+                    return null;
+                  },
                 ),
               ),
             ),
@@ -55,6 +73,7 @@ class _CriarListaPageState extends State<CriarListaPage> {
                               Navigator.pop(context);
                             },
                             style: OutlinedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
                               side: BorderSide(color: Colors.white),
                             ),
                             child: Text(
@@ -74,12 +93,13 @@ class _CriarListaPageState extends State<CriarListaPage> {
                               criarLista();
                             },
                             style: OutlinedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              side: BorderSide(color: Colors.white),
+                              elevation: 2,
+                              shadowColor: Colors.black,
                             ),
+
                             child: Text(
                               "Criar",
-                              style: TextStyle(color: Colors.blue),
+                              style: Theme.of(context).textTheme.titleSmall,
                             ),
                           ),
                         ),

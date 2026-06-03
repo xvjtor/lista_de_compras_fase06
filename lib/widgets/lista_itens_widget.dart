@@ -35,7 +35,12 @@ class _ListaItensWidgetState extends State<ListaItensWidget> {
           SizedBox(width: 10),
           Text(
             widget.item.itemNome,
-            style: TextStyle(color: widget.item.textColor, fontSize: 16),
+            style: TextStyle(
+              fontSize: 18,
+              color: widget.item.marcado
+                  ? Colors.grey
+                  : Theme.of(context).textTheme.titleMedium!.color,
+            ),
           ),
           Spacer(),
           Text(
