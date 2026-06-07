@@ -20,7 +20,7 @@ class _ListaItensWidgetState extends State<ListaItensWidget> {
           Transform.scale(
             scale: 1.5,
             child: Checkbox(
-              key: Key("productCheckbox"),
+              key: Key("checkboxBuy"),
               onChanged: (value) {
                 setState(() {
                   widget.item.changeStatus(value!);

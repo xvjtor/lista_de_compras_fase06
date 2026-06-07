@@ -34,7 +34,7 @@ class _CriarListaPageState extends State<CriarListaPage> {
               child: Align(
                 alignment: .center,
                 child: TextFormField(
-                  key: Key("listNameInput"),
+                  key: Key("inputNameList"),
 
                   controller: nomeListaController,
                   style: Theme.of(context).textTheme.labelSmall,
@@ -68,7 +68,7 @@ class _CriarListaPageState extends State<CriarListaPage> {
                         child: SizedBox(
                           height: 35,
                           child: OutlinedButton(
-                            key: Key("backToListsBtn"),
+                            key: Key("btnBackList"),
                             onPressed: () {
                               Navigator.pop(context);
                             },
@@ -88,7 +88,7 @@ class _CriarListaPageState extends State<CriarListaPage> {
                         child: SizedBox(
                           height: 35,
                           child: OutlinedButton(
-                            key: Key("createListBtn"),
+                            key: Key("btnCreateList"),
                             onPressed: () {
                               criarLista();
                             },

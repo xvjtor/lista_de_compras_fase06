@@ -59,13 +59,13 @@ class _AddItemWidgetState extends State<AddItemWidget> {
 
             TextfieldWidget(
               color: const Color(0xFF121212),
-              key: Key("inputItem"),
+              key: Key("inputNameItem"),
               text: "Nome do item",
               controller: nomeItemController,
             ),
 
             TextfieldWidget(
-              key: Key("inputValue"),
+              key: Key("intputPriceItem"),
               color: const Color(0xFF121212),
               text: "R\$ 0,00",
               controller: valorItemController,
@@ -76,6 +76,7 @@ class _AddItemWidgetState extends State<AddItemWidget> {
               children: [
                 Spacer(),
                 TextButton(
+                  key: Key("btnAddItem"),
                   onPressed: () {
                     addItem();
                   },

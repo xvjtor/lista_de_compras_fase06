@@ -1,7 +1,7 @@
 import 'package:app_lista_de_compras/model/lista_model.dart';
 import 'package:app_lista_de_compras/pages/criar_lista_page.dart';
 import 'package:app_lista_de_compras/pages/user_preference_page.dart';
-import 'package:app_lista_de_compras/themes/app_colors.dart';
+
 import 'package:app_lista_de_compras/widgets/lista_home_widget.dart';
 import 'package:app_lista_de_compras/widgets/lista_vazia_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _ListasHomepageState extends State<ListasHomepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          key: Key("appBarTitle"),
+          key: Key("tittleAppBar"),
           "Minhas listas",
           style: TextStyle(color: Colors.white, fontWeight: .w500),
         ),
@@ -39,7 +39,7 @@ class _ListasHomepageState extends State<ListasHomepage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        key: Key("addListBtn"),
+        key: Key("btnAddList"),
 
         onPressed: () async {
           final novaLista = await Navigator.push<Lista>(

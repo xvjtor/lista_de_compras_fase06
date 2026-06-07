@@ -6,7 +6,7 @@ Widget listaVazia() {
       mainAxisAlignment: .center,
       children: [
         Image.asset(
-          key: Key("emptyListImage"),
+          key: Key("imageWithoutList"),
           "assets/images/lista-de-compras.png",
           width: 100,
         ),

@@ -22,7 +22,7 @@ class _ListaHomeWidgetState extends State<ListaHomeWidget> {
         return Padding(
           padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Card(
-            key: Key("shoppingListCard"),
+            key: Key("cardList"),
 
             child: ListTile(
               title: Padding(

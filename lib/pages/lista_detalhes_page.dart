@@ -44,7 +44,7 @@ class _ListaDetalhesState extends State<ListaDetalhesPage> {
 
         actions: [
           TextButton(
-            key: Key("updateListBtn"),
+            key: Key("btnUpdateList"),
             onPressed: () {
               setState(() {});
             },
@@ -97,7 +97,7 @@ class _ListaDetalhesState extends State<ListaDetalhesPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        key: Key("addNewItemBtn"),
+        key: Key("btnAddNewItem"),
         onPressed: () {
           addItem();
         },
